@@ -6,7 +6,7 @@ window.onload = function() {
   config_fn = function($provide) {
     $provide.value('$rootElement', $root_element);
   };
-  modules = ['ng', config_fn];
+  modules = ['ng', 'manual_bootstrap', config_fn];
   $injector = angular.injector(modules);
   $compile = $injector.get('$compile');
   $composite_link_fn = $compile($root_element);
