@@ -3,8 +3,9 @@
 app.directive('demoGreet', function($parse) {
   var directive, link_fn;
   link_fn = function(scope, l_element, attrs) {
-    console.log('link', scope, l_element, attrs);
-    l_element.addClass('linking');
+    scope.$watch('name', function(name) {
+      l_element.text("Hello, " + name + "!");
+    });
   };
   directive = {
     link: link_fn

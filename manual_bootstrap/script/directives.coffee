@@ -1,7 +1,8 @@
 app.directive 'demoGreet', ($parse)->
 	link_fn = (scope, l_element, attrs)->
-		console.log 'link', scope, l_element, attrs
-		l_element.addClass 'linking'
+		scope.$watch 'name', (name)->
+			l_element.text "Hello, #{name}!"
+			return
 		return
 	directive =
 		link: link_fn
