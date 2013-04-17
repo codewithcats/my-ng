@@ -7,6 +7,11 @@ app.directive('demoGreet', function($parse) {
       var display_name;
       display_name = name ? name : 'Anonymous';
       l_element.text("Hello, " + display_name + "!");
+      l_element.bind('click', function() {
+        return scope.$apply(function() {
+          return scope.name = 'Amp';
+        });
+      });
     });
   };
   directive = {

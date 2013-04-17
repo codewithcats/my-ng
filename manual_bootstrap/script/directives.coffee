@@ -3,6 +3,9 @@ app.directive 'demoGreet', ($parse)->
 		scope.$watch attrs.demoGreet, (name)->
 			display_name = if name then name else 'Anonymous'
 			l_element.text "Hello, #{display_name}!"
+			l_element.bind 'click', ()->
+				scope.$apply ()->
+					scope.name = 'Amp'
 			return
 		return
 	directive =
