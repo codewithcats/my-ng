@@ -19,3 +19,11 @@ app.directive('demoGreet', function($parse) {
   };
   return directive;
 });
+
+app.directive('agentBox', function() {
+  var directive;
+  return directive = {
+    restrict: 'E',
+    templateUrl: 'template/box-tpl.html'
+  };
+});

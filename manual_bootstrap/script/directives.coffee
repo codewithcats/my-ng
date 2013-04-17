@@ -9,3 +9,8 @@ app.directive 'demoGreet', ($parse)->
 	directive =
 		link: link_fn
 	return directive
+
+app.directive 'agentBox', ()->
+	directive = 
+		restrict: 'E'
+		templateUrl: 'template/box-tpl.html'

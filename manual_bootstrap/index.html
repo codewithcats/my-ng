@@ -3,10 +3,15 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Manual Bootstrap | AngularJS</title>
+	<style>
+		.box {float: left;color: #ccc;background-color: #333;width: 100px;height: 100px;}
+		.box > h3, .box > p {text-align: center;}
+	</style>
 </head>
 <body ng-controller="demo_ctrl">
 	<label for="name">Name:</label><input type="text" id="name" ng-model="name" />
 	<h1 demo-greet="name"></h1>
+	<agent-box></agent-box>
 	<script src="script/angular.js"></script>
 	<script src="script/app.js"></script>
 	<script src="script/controllers.js"></script>
