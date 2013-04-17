@@ -3,13 +3,13 @@
 app.directive('demoGreet', function($parse) {
   var directive, link_fn;
   link_fn = function(scope, l_element, attrs) {
-    scope.$watch(attrs.demoGreet, function(name) {
+    return scope.$watch(attrs.demoGreet, function(name) {
       var display_name;
       display_name = name ? name : 'Anonymous';
       l_element.text("Hello, " + display_name + "!");
-      l_element.bind('click', function() {
+      return l_element.bind('click', function() {
         return scope.$apply(function() {
-          return scope.name = 'Amp';
+          return $parse(attrs.demoGreet).assign(scope, 'Amp');
         });
       });
     });

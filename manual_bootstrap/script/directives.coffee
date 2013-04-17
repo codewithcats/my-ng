@@ -5,9 +5,7 @@ app.directive 'demoGreet', ($parse)->
 			l_element.text "Hello, #{display_name}!"
 			l_element.bind 'click', ()->
 				scope.$apply ()->
-					scope.name = 'Amp'
-			return
-		return
+					$parse(attrs.demoGreet).assign(scope, 'Amp')
 	directive =
 		link: link_fn
 	return directive
