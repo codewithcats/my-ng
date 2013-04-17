@@ -3,8 +3,10 @@
 app.directive('demoGreet', function($parse) {
   var directive, link_fn;
   link_fn = function(scope, l_element, attrs) {
-    scope.$watch('name', function(name) {
-      l_element.text("Hello, " + name + "!");
+    scope.$watch(attrs.demoGreet, function(name) {
+      var display_name;
+      display_name = name ? name : 'Anonymous';
+      l_element.text("Hello, " + display_name + "!");
     });
   };
   directive = {

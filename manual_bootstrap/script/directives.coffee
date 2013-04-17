@@ -1,7 +1,8 @@
 app.directive 'demoGreet', ($parse)->
 	link_fn = (scope, l_element, attrs)->
-		scope.$watch 'name', (name)->
-			l_element.text "Hello, #{name}!"
+		scope.$watch attrs.demoGreet, (name)->
+			display_name = if name then name else 'Anonymous'
+			l_element.text "Hello, #{display_name}!"
 			return
 		return
 	directive =
